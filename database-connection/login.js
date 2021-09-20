@@ -1,4 +1,9 @@
 function login(email, password, callback) {
+
+  if (!email || !password) {
+    return callback(new WrongUsernameOrPasswordError());
+  }
+
   const axios = require("axios@0.21.1");
 
   axios
