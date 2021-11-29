@@ -1,5 +1,5 @@
 async function setRolesToUser(user, context, callback) {
-  // Organisation id only exist for Login via external IDP
+  // Organisation id will present for company specific auth0 login
   const orgId = context.organization && context.organization.id;
   if (!orgId) {
     return callback(null, user, context);
