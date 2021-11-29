@@ -73,10 +73,31 @@ async function setRolesToUser(user, context, callback) {
       scope: "create:organization_member_roles",
     });
 
-    await management.organizations.addMemberRoles(
-      { id: orgId, user_id: user.user_id },
-      { roles }
+    const curMemberRoles = await management.organizations.getMemberRoles({
+      id: orgId,
+      user_id: user.user_id,
+    });
+
+    const curRoleIds = curMemberRoles.map((roleInfo) => roleInfo.id);
+    const newRolesSet = new Set(roles);
+    const rolesToBeRemoved = [...curRoleIds].filter(
+      (role) => !newRolesSet.has(role)
     );
+
+    if (roles.length) {
+      await management.organizations.addMemberRoles(
+        { id: orgId, user_id: user.user_id },
+        { roles }
+      );
+    }
+
+    if (rolesToBeRemoved.length) {
+      await management.organizations.removeMemberRoles(
+        { id: orgId, user_id: user.user_id },
+        { roles: rolesToBeRemoved }
+      );
+    }
+
     callback(null, user, context);
   } catch (err) {
     console.log(
