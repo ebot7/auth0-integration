@@ -5,28 +5,43 @@ async function setRolesToUser(user, context, callback) {
     return callback(null, user, context);
   }
 
-  try {
-    const axios = require("axios@0.21.1");
-
-    const authRes = await axios.post(
-      `${configuration.AUTH_ENDPOINT}/authentication`,
-      {
-        strategy: "local-api",
-        apiKey: configuration.API_KEY,
-        apiSecret: configuration.API_SECRET,
-      }
-    );
-
-    if (!authRes.data || !authRes.data.accessToken) {
-      throw new Error("BOT_ENGINE_AUTH_FAILED");
+  function isCachedAccessTokenValid() {
+    if (!global.accessToken || !global.tokenExpiryTime) {
+      return false;
     }
 
-    const accessToken = authRes.data.accessToken;
+    return Date.now() < global.tokenExpiryTime;
+  }
+
+  try {
+    const axios = require("axios@0.21.1");
+    const jwtDecode = require("jwt-decode@3.1.2");
+
+    if (!isCachedAccessTokenValid()) {
+      const authRes = await axios.post(
+        `${configuration.AUTH_ENDPOINT}/authentication`,
+        {
+          strategy: "local-api",
+          apiKey: configuration.API_KEY,
+          apiSecret: configuration.API_SECRET,
+        }
+      );
+
+      if (!authRes.data || !authRes.data.accessToken) {
+        throw new Error("BOT_ENGINE_AUTH_FAILED");
+      }
+
+      const accessToken = authRes.data.accessToken;
+      const { exp } = jwtDecode(accessToken);
+      global.accessToken = authRes.data.accessToken;
+      // TTL reduced for 3 minutes
+      global.tokenExpiryTime = exp * 1000 - 3 * 60 * 1000;
+    }
 
     const orgInfoRes = await axios({
       method: "GET",
       url: `${configuration.AUTH_ENDPOINT}/orgs?auth0OrgId=${orgId}`,
-      headers: { Authorization: accessToken },
+      headers: { Authorization: global.accessToken },
     });
 
     const resData = orgInfoRes.data;
