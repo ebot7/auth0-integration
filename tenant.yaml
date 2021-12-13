@@ -384,48 +384,6 @@ databases:
       brute_force_protection: true
     realms:
       - Test-Users
-  - name: Username-Password-Authentication
-    strategy: auth0
-    enabled_clients:
-      - AP Admin API
-      - API Explorer Application
-      - auth0-deploy-cli-extension
-      - Bot Engine
-      - ConvEngine API (Test) (Test Application)
-      - Default App
-      - Login-UI
-      - Sample App
-      - User Manager
-    is_domain_connection: false
-    options:
-      mfa:
-        active: true
-        return_enroll_settings: true
-      import_mode: false
-      customScripts:
-        change_password: ./databases/Username-Password-Authentication/change_password.js
-        create: ./databases/Username-Password-Authentication/create.js
-        delete: ./databases/Username-Password-Authentication/delete.js
-        get_user: ./databases/Username-Password-Authentication/get_user.js
-        login: ./databases/Username-Password-Authentication/login.js
-        verify: ./databases/Username-Password-Authentication/verify.js
-      disable_signup: true
-      passwordPolicy: good
-      password_history:
-        size: 5
-        enable: false
-      strategy_version: 2
-      password_dictionary:
-        enable: false
-        dictionary: []
-      brute_force_protection: true
-      password_no_personal_info:
-        enable: false
-      password_complexity_options:
-        min_length: 8
-      enabledDatabaseCustomization: false
-    realms:
-      - Username-Password-Authentication
 tenant:
   enabled_locales:
     - en
