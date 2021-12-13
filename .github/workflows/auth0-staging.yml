@@ -10,10 +10,6 @@ jobs:
     steps:
       - name: Download files from the current repository
         uses: actions/checkout@v2
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
       - name: Install the auth0-deploy-cli
         run: npm install -g auth0-deploy-cli
       - name: Import changes to the Auth0 staging account
