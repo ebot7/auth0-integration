@@ -1,8 +1,5 @@
 name: Deploy to Auth0 staging account
 on:
-  pull_request:
-    paths-ignore:
-      - "**/*.md"
   push:
     branches:
       - master
