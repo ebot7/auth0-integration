@@ -22,7 +22,7 @@ function changePassword(email, newPassword, callback) {
   //     https://example.com?email=alice%40example.com&message=error&success=false
 
   const axios = require("axios@0.21.1");
-
+  
   axios
     .post(`${configuration.AUTH_ENDPOINT}/authentication`, {
       strategy: "local-api",
@@ -61,12 +61,10 @@ function changePassword(email, newPassword, callback) {
 
         callback(null, patchUserRes.status === 200);
       } catch (err) {
-        // Error object may reveal auth0 user access Token
         callback(new Error(err.message));
       }
     })
     .catch((err) => {
-      // Error object may reveal auth0 user access Token
       callback(new Error(err.message));
     });
 }

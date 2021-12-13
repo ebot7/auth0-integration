@@ -14,7 +14,7 @@ function getByEmail(email, callback) {
   //     callback(new Error("my error message"));
 
   const axios = require("axios@0.21.1");
-
+  
   axios
     .post(`${configuration.AUTH_ENDPOINT}/authentication`, {
       strategy: "local-api",
@@ -27,32 +27,26 @@ function getByEmail(email, callback) {
         return;
       }
 
-      try {
-        const userInfoRes = await axios({
-          method: "GET",
-          url: `${configuration.AUTH_ENDPOINT}/users?email=${email}`,
-          headers: { Authorization: response.data.accessToken },
-        });
+      const userInfoRes = await axios({
+        method: "GET",
+        url: `${configuration.AUTH_ENDPOINT}/users?email=${email}`,
+        headers: { Authorization: response.data.accessToken },
+      });
 
-        const resData = userInfoRes.data;
-        const userInfo = resData && resData.data && resData.data[0];
+      const resData = userInfoRes.data;
+      const userInfo = resData && resData.data && resData.data[0];
 
-        if (!userInfo || !userInfo._id) {
-          callback(new Error("USER NOT EXIST"));
-          return;
-        }
-
-        callback(null, {
-          email,
-          user_id: userInfo._id,
-        });
-      } catch (err) {
-        // Error object may reveal auth0 user access Token
-        callback(new Error(err.message));
+      if (!userInfo || !userInfo._id) {
+        callback(new Error("USER NOT EXIST"));
+        return;
       }
+
+      callback(null, {
+        email,
+        user_id: userInfo._id,
+      });
     })
     .catch((err) => {
-      // Error object may reveal auth0 user access Token
-      callback(new Error(err.message));
+      callback(err);
     });
 }

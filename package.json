@@ -1,0 +1,20 @@
+{
+  "name": "auth0-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "import:staging": "a0deploy import --input_file tenant.yaml --config_file ./config/staging.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebot7/auth0-integration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebot7/auth0-integration/issues"
+  },
+  "homepage": "https://github.com/ebot7/auth0-integration#readme"
+}
