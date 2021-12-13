@@ -8,8 +8,10 @@
       "http://localhost:4200/",
       "https://dev.e-bot7.io/",
       "https://staging.e-bot7.de/",
+      "https://main-botconsole-1.staging.e-bot7.de/",
       "https://main-botconsole-2.staging.e-bot7.de/",
       "https://console.e-bot7.de/",
+      "https://main-botconsole-1.production.e-bot7.de/",
       "https://main-botconsole-2.production.e-bot7.de/",
       "https://main-botconsole.production.e-bot7.de/"
     ],
@@ -17,8 +19,10 @@
       "http://localhost:4200/callback",
       "https://dev.e-bot7.io/callback",
       "https://staging.e-bot7.de/callback",
+      "https://main-botconsole-1.staging.e-bot7.de/",
       "https://main-botconsole-2.staging.e-bot7.de/callback",
       "https://console.e-bot7.de/callback",
+      "https://main-botconsole-1.production.e-bot7.de/",
       "https://main-botconsole-2.production.e-bot7.de/callback",
       "https://main-botconsole.production.e-bot7.de/callback"
     ]
