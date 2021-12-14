@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/ebot7/auth0-integration/issues"
   },
-  "homepage": "https://github.com/ebot7/auth0-integration#readme"
+  "homepage": "https://github.com/ebot7/auth0-integration#readme",
+  "dependencies": {
+    "@types/auth0": "^2.34.8",
+    "auth0": "^2.37.0",
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "slugify": "^1.6.3",
+    "ts-node": "^10.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
