@@ -1,0 +1,27 @@
+name: Migrate Organisation to Auth0
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Target: staging, production"
+        required: true
+        default: staging
+      orgid:
+        description: bot-engine orgid
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Invoke migration script with arguments
+        env:
+          STAGING_AUTH0_CLIENT_ID: ${{ secrets.STAGING_AUTH0_CLIENT_ID }}
+          STAGING_AUTH0_CLIENT_SECRET: ${{ secrets.STAGING_AUTH0_CLIENT_SECRET }}
+          AUTH0_BOT_ENGINE_API_KEY: ${{ secrets.AUTH0_BOT_ENGINE_API_KEY }}
+          AUTH0_BOT_ENGINE_API_SECRET: ${{ secrets.AUTH0_BOT_ENGINE_API_SECRET }}
+        run: npm run migrate:org ${{ github.event.inputs.target }} ${{ github.event.inputs.orgid }}
