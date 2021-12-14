@@ -47,4 +47,15 @@ export class BotEngine {
 
     return orgInfo;
   }
+
+  async updateOrgId(orgId: string, auth0OrgId: string) {
+    return axios({
+      method: "PUT",
+      url: `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
+      headers: { Authorization: await this.getAccessToken() },
+      data: {
+        auth0OrgId
+      }
+    });
+  }
 }
