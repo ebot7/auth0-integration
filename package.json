@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "import:staging": "a0deploy import --input_file tenant.yaml --config_file ./config/staging.json"
+    "import:staging": "a0deploy import --input_file tenant.yaml --config_file ./config/staging.json",
+    "migrate:org": "ts-node migrations/migrateOrg.ts"
   },
   "repository": {
     "type": "git",

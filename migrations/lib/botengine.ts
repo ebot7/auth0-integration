@@ -1,5 +1,4 @@
 import axios from "axios";
-import { config } from "dotenv/lib/main";
 import { Config } from "./config";
 
 export class BotEngine {
@@ -31,31 +30,31 @@ export class BotEngine {
     return this.accessToken;
   }
 
-  async getOrgInfoById(orgId) {
-    const orgInfoRes = await axios({
-      method: "GET",
-      url: `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
-      headers: { Authorization: await this.getAccessToken() },
-    });
+  async getOrgInfoById(orgId: string) {
+    const orgInfoRes = await axios.get(
+      `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
+      { headers: { Authorization: await this.getAccessToken() } }
+    );
 
-    const resData = orgInfoRes.data;
-    const orgInfo = resData && resData.data && resData.data[0];
+    const orgInfo = orgInfoRes.data;
 
-    if (!orgInfo) {
+    if (!orgInfo || !orgInfo._id) {
       throw new Error("ORG_NOT_EXIST");
     }
 
+    console.log("orgInfo", orgInfo);
     return orgInfo;
   }
 
   async updateOrgId(orgId: string, auth0OrgId: string) {
-    return axios({
-      method: "PUT",
-      url: `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
-      headers: { Authorization: await this.getAccessToken() },
-      data: {
-        auth0OrgId
+    return axios.patch(
+      `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
+      {
+        auth0OrgId,
+      },
+      {
+        headers: { Authorization: await this.getAccessToken() },
       }
-    });
+    );
   }
 }

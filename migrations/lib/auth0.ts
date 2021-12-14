@@ -11,9 +11,9 @@ export class Auth0 {
     });
   }
 
-  createOrg(orgName) {
+  createOrg(orgName: string) {
     return this.management.organizations.create({
-      name: slugify(orgName),
+      name: slugify(orgName, { lower: true }),
       display_name: orgName,
     });
   }
