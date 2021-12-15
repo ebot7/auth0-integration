@@ -45,11 +45,12 @@ export class BotEngine {
     return orgInfo;
   }
 
-  async updateOrgId(orgId: string, auth0OrgId: string) {
+  async updateOrg(orgId: string, auth0OrgId: string, domain: string) {
     return axios.patch(
       `${this.config.getBotEngineEndPoint()}/orgs/${orgId}`,
       {
         auth0OrgId,
+        ...(domain && { domain }),
       },
       {
         headers: { Authorization: await this.getAccessToken() },
