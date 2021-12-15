@@ -10,7 +10,7 @@ on:
         description: bot-engine orgid
         required: true
       domain:
-        description: "Org email domain, needed for external IDP"
+        description: "Org email domain, needed for external IDP ex. e-bot7.com"
         required: false
 
 jobs:
