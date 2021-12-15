@@ -42,7 +42,6 @@ export class BotEngine {
       throw new Error("ORG_NOT_EXIST");
     }
 
-    console.log("orgInfo", orgInfo);
     return orgInfo;
   }
 
