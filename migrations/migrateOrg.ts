@@ -12,11 +12,10 @@ const migrateOrg = async (config: Config, orgId: string) => {
   }
   const botEngine = new BotEngine(config);
   const auth0 = new Auth0(config);
-  const { name } = await botEngine.getOrgInfoById(orgId);
-  console.log(`migrating org:${name}`);
-  const { id: auth0OrgId } = await auth0.createOrg(name);
-  console.log(`org created in auth0:${auth0OrgId}`);
+  const orgInfo = await botEngine.getOrgInfoById(orgId);
+  const { id: auth0OrgId } = await auth0.createOrg(orgInfo);
   await botEngine.updateOrgId(orgId, auth0OrgId);
+  console.log(`auth0 orgId updated in bot-engine`);
 };
 
 const env = process.argv[2];
