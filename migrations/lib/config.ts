@@ -1,7 +1,7 @@
 export class Config {
   isProduction: boolean;
-  constructor(env: string) {
-    this.isProduction = env === "production";
+  constructor() {
+    this.isProduction = process.env.NODE_ENV === "production";
   }
 
   getBotEngineEndPoint() {

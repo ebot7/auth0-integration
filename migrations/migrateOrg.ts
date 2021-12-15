@@ -4,8 +4,9 @@ import { BotEngine } from "./lib/botengine";
 import { Config } from "./lib/config";
 
 dotenv.config();
+const config = new Config();
 
-const migrateOrg = async (config: Config, orgId: string) => {
+const migrateOrg = async (orgId: string, domain: string) => {
   if (!orgId) {
     console.log("Please provide non-empty bot engine orgId");
     return;
@@ -14,10 +15,10 @@ const migrateOrg = async (config: Config, orgId: string) => {
   const auth0 = new Auth0(config);
   const orgInfo = await botEngine.getOrgInfoById(orgId);
   const { id: auth0OrgId } = await auth0.createOrg(orgInfo);
-  await botEngine.updateOrgId(orgId, auth0OrgId);
+  await botEngine.updateOrg(orgId, auth0OrgId, domain);
   console.log(`auth0 orgId updated in bot-engine`);
 };
 
-const env = process.argv[2];
-const orgId = process.argv[3];
-migrateOrg(new Config(env), orgId);
+const orgId = process.argv[2];
+const emailDomain = process.argv[3];
+migrateOrg(orgId, emailDomain);
