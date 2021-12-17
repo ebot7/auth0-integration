@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "import:staging": "a0deploy import --input_file tenant.yaml --config_file ./config/staging.json",
+    "import:production": "a0deploy import --input_file tenant.yaml --config_file ./config/production.json",
+    "export:staging": "a0deploy export --output_folder . --format yaml --config_file ./config/staging.json",
+    "export:production": "a0deploy export --output_folder . --format yaml --config_file ./config/production.json",
     "migrate:org": "ts-node migrations/migrateOrg.ts"
   },
   "repository": {
