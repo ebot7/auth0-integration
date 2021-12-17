@@ -1,4 +1,4 @@
-name: Deploy to Auth0 staging account
+name: Deploy to Auth0 production tenant
 on:
   release
 
@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install the auth0-deploy-cli
         run: npm install -g auth0-deploy-cli
-      - name: Import changes to the Auth0 staging account
+      - name: Import changes to the Auth0 production account
         env:
           AUTH0_CLIENT_SECRET: ${{ secrets.PRODUCTION_AUTH0_CLIENT_SECRET }}
         run: npm run import:production
