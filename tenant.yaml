@@ -276,7 +276,7 @@ emailProvider: {}
 emailTemplates: []
 clientGrants:
   - client_id: API Explorer Application
-    audience: https://dev-zf0bz1nz.eu.auth0.com/api/v2/
+    audience: https://##AUTH0_DOMAIN##/api/v2/
     scope:
       - read:client_grants
       - create:client_grants
@@ -409,7 +409,7 @@ clientGrants:
       - read:organization_invitations
       - delete:organization_invitations
   - client_id: User Management API
-    audience: https://dev-zf0bz1nz.eu.auth0.com/api/v2/
+    audience: https://##AUTH0_DOMAIN##/api/v2/
     scope:
       - read:client_grants
       - create:client_grants
