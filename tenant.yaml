@@ -144,7 +144,7 @@ clients:
     sso_disabled: false
     token_endpoint_auth_method: none
     web_origins: @@APP_ORIGINS@@
-  - name: Sample App
+  - name: User Management API
     allowed_clients: []
     app_type: non_interactive
     callbacks: []
