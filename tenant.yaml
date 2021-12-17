@@ -593,18 +593,3 @@ prompts:
   identifier_first: false
 migrations:
   issue_opaque_access_tokens: true
-actions:
-  - name: Test
-    code: ./actions/Test/code.js
-    dependencies: []
-    deployed: false
-    runtime: node16
-    secrets: []
-    status: built
-    supported_triggers:
-      - id: post-login
-        version: v2
-triggers:
-  post-login:
-    - action_name: Test
-      display_name: Test
