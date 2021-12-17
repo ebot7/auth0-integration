@@ -1,0 +1,27 @@
+{
+  "AUTH0_DOMAIN": "e-bot7-production.eu.auth0.com",
+  "AUTH0_CLIENT_ID": "uI7SLzu9mQgU9izqW9AraRW8Uw3Ia6R2",
+  "AUTH0_CLIENT_SECRET": "",
+  "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
+    "AUTH0_DOMAIN": "e-bot7-production.eu.auth0.com",
+    "AUTH0_TENANT_NAME": "e-bot7 Production",
+    "APP_ORIGINS": [
+      "https://console.e-bot7.de/",
+      "https://main-botconsole-1.production.e-bot7.de/",
+      "https://main-botconsole-2.production.e-bot7.de/",
+      "https://main-botconsole.production.e-bot7.de/"
+    ],
+    "APP_CALLBACKS": [
+      "https://console.e-bot7.de/callback",
+      "https://main-botconsole-1.production.e-bot7.de/",
+      "https://main-botconsole-2.production.e-bot7.de/callback",
+      "https://main-botconsole.production.e-bot7.de/callback"
+    ]
+  },
+  "AUTH0_ALLOW_DELETE": false,
+  "AUTH0_EXCLUDED_RULES": [""],
+  "EXCLUDED_PROPS": {
+   "clients": ["client_secret"],
+    "connections": ["options.client_secret"]
+  }
+}

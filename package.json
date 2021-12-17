@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "import:staging": "a0deploy import --input_file tenant.yaml --config_file ./config/staging.json",
+    "import:production": "a0deploy import --input_file tenant.yaml --config_file ./config/production.json",
+    "export:staging": "a0deploy export --output_folder . --format yaml --config_file ./config/staging.json",
+    "export:production": "a0deploy export --output_folder . --format yaml --config_file ./config/production.json",
     "migrate:org": "ts-node migrations/migrateOrg.ts"
   },
   "repository": {
@@ -21,6 +24,7 @@
   "dependencies": {
     "@types/auth0": "^2.34.8",
     "auth0": "^2.37.0",
+    "auth0-deploy-cli": "^7.3.2",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "slugify": "^1.6.3",
