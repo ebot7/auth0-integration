@@ -1,0 +1,16 @@
+name: Deploy to Auth0 staging account
+on:
+  release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download files from the current repository
+        uses: actions/checkout@v2
+      - name: Install the auth0-deploy-cli
+        run: npm install -g auth0-deploy-cli
+      - name: Import changes to the Auth0 staging account
+        env:
+          AUTH0_CLIENT_SECRET: ${{ secrets.PRODUCTION_AUTH0_CLIENT_SECRET }}
+        run: npm run import:production
