@@ -1,5 +1,5 @@
 rules:
-  - name: Set roles to a user
+  - name: setRolesToUser
     script: ./rules/setRolesToUser.js
     stage: login_success
     enabled: true
