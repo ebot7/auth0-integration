@@ -62,6 +62,9 @@ clients:
     client_aliases: []
     cross_origin_auth: false
     custom_login_page_on: true
+    description: >-
+      The main login into console.e-bot7.de, the credentials are used by both
+      the login-ui core service as well as the old bot-console.
     grant_types:
       - authorization_code
       - implicit
