@@ -53,7 +53,7 @@ clients:
       idle_token_lifetime: 1296000
       rotation_type: non-rotating
     sso_disabled: false
-  - name: Login-UI
+  - name: Console
     allowed_clients: []
     allowed_logout_urls: @@APP_ORIGINS@@
     allowed_origins: @@APP_ORIGINS@@
@@ -150,7 +150,7 @@ databases:
     strategy: auth0
     enabled_clients:
       - auth0-deploy-cli-extension
-      - Login-UI
+      - Console
       - User Management API
     is_domain_connection: false
     options:
@@ -207,7 +207,7 @@ databases:
     enabled_clients:
       - auth0-deploy-cli-extension
       - Default App
-      - Login-UI
+      - Console
     is_domain_connection: false
     options:
       mfa:
