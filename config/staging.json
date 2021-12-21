@@ -5,6 +5,7 @@
   "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
     "AUTH0_DOMAIN": "e-bot7-staging.eu.auth0.com",
     "AUTH0_TENANT_NAME": "e-bot7 Staging",
+    "APP_ERROR_PAGE": "https://staging.e-bot7.de/",
     "APP_ORIGINS": [
       "https://staging.e-bot7.de/",
       "https://main-botconsole-1.staging.e-bot7.de/",
