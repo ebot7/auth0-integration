@@ -12,7 +12,7 @@ export class Config {
 
   getBotEngineApiCredential() {
     return {
-      apiKey: `${process.env.AUTH0_BOT_ENGINE_API_KEY}`,
+      apiKey: "JbWWq623DkxarGY8fCuf",
       apiSecret: `${process.env.AUTH0_BOT_ENGINE_API_SECRET}`,
     };
   }
