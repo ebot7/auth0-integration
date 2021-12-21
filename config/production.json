@@ -5,6 +5,7 @@
   "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
     "AUTH0_DOMAIN": "e-bot7-production.eu.auth0.com",
     "AUTH0_TENANT_NAME": "e-bot7 Production",
+    "APP_ERROR_PAGE": "https://console.e-bot7.de/",
     "APP_ORIGINS": [
       "https://console.e-bot7.de/",
       "https://main-botconsole-1.production.e-bot7.de/",
@@ -21,7 +22,7 @@
   "AUTH0_ALLOW_DELETE": false,
   "AUTH0_EXCLUDED_RULES": [""],
   "EXCLUDED_PROPS": {
-   "clients": ["client_secret"],
+    "clients": ["client_secret"],
     "connections": ["options.client_secret"]
   }
 }

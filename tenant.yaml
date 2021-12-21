@@ -6,9 +6,11 @@ rules:
     order: 1
 rulesConfigs: []
 hooks: []
-pages: []
+pages:
+  - name: error_page
+    url: ##APP_ERROR_PAGE##
 connections: []
-organizations: []
+organizations: []  
 resourceServers:
   - name: Bot Engine
     identifier: https://example.com/botengine
