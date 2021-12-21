@@ -1,6 +1,8 @@
 name: Deploy to Auth0 staging account
 on:
   push:
+    paths-ignore:
+      - "**/migrations"
     branches:
       - master
 

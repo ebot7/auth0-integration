@@ -12,7 +12,7 @@ export class Config {
 
   getBotEngineApiCredential() {
     return {
-      apiKey: `${process.env.AUTH0_BOT_ENGINE_API_KEY}`,
+      apiKey: "JbWWq623DkxarGY8fCuf",
       apiSecret: `${process.env.AUTH0_BOT_ENGINE_API_SECRET}`,
     };
   }
@@ -21,15 +21,15 @@ export class Config {
     if (this.isProduction) {
       // Need to update clientId
       return {
-        domain: "https://console.e-bot7.de",
-        clientId: `${process.env.PRODUCTION_AUTH0_CLIENT_ID}`,
+        domain: "e-bot7-production.eu.auth0.com",
+        clientId: "uI7SLzu9mQgU9izqW9AraRW8Uw3Ia6R2",
         clientSecret: `${process.env.PRODUCTION_AUTH0_CLIENT_SECRET}`,
       };
     }
 
     return {
-      domain: "dev-zf0bz1nz.eu.auth0.com",
-      clientId: `${process.env.STAGING_AUTH0_CLIENT_ID}`,
+      domain: "e-bot7-staging.eu.auth0.com",
+      clientId: "Tr25hW3MBghQRuYinFhRnnOI9CdlUWCG",
       clientSecret: `${process.env.STAGING_AUTH0_CLIENT_SECRET}`,
     };
   }

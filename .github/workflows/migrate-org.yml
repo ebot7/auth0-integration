@@ -24,8 +24,6 @@ jobs:
       - name: Invoke migration script with arguments
         env:
           NODE_ENV: ${{ github.event.inputs.target }}
-          STAGING_AUTH0_CLIENT_ID: ${{ secrets.STAGING_AUTH0_CLIENT_ID }}
           STAGING_AUTH0_CLIENT_SECRET: ${{ secrets.STAGING_AUTH0_CLIENT_SECRET }}
-          AUTH0_BOT_ENGINE_API_KEY: ${{ secrets.AUTH0_BOT_ENGINE_API_KEY }}
           AUTH0_BOT_ENGINE_API_SECRET: ${{ secrets.AUTH0_BOT_ENGINE_API_SECRET }}
         run: npm run migrate:org ${{ github.event.inputs.orgid }} ${{ github.event.inputs.domain }}
