@@ -3,8 +3,6 @@ import slugify from "slugify";
 import { Config } from "./config";
 import { OrgInfo, UserInfo } from "./types";
 
-const BOT_ENGINE_DB_CONN_ID = "con_EoQws6gyIW6toLfG";
-
 export class Auth0 {
   config: Config;
   management: ManagementClient;
