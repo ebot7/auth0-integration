@@ -17,6 +17,10 @@ export class Config {
     };
   }
 
+  getBotEngineConnectionDB() {
+    return this.isProduction ? "con_yxclyfuFShXYYjVu" : "con_WTn2lSd8QQc3y3Cq";
+  }
+
   getAuth0Credential() {
     if (this.isProduction) {
       // Need to update clientId
