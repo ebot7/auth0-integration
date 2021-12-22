@@ -3,12 +3,12 @@ import slugify from "slugify";
 import { Config } from "./config";
 import { OrgInfo, UserInfo } from "./types";
 
-const BOT_ENGINE_DB_CONN_ID = "con_EoQws6gyIW6toLfG";
-
 export class Auth0 {
+  config: Config;
   management: ManagementClient;
 
   constructor(config: Config) {
+    this.config = config;
     this.management = new ManagementClient({
       ...config.getAuth0Credential(),
       scope: "create:organizations create:organization_connections",
@@ -21,8 +21,7 @@ export class Auth0 {
         id,
       },
       {
-        // botengine database connection
-        connection_id: BOT_ENGINE_DB_CONN_ID,
+        connection_id: this.config.getBotEngineConnectionDB(),
         assign_membership_on_login: true,
       }
     );
