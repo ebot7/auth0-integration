@@ -13,7 +13,7 @@
     ],
     "APP_CALLBACKS": [
       "https://staging.e-bot7.de/callback",
-      "https://main-botconsole-1.staging.e-bot7.de/",
+      "https://main-botconsole-1.staging.e-bot7.de/callback",
       "https://main-botconsole-2.staging.e-bot7.de/callback"
     ]
   },
