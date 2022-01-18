@@ -10,13 +10,15 @@
       "https://console.e-bot7.de/",
       "https://main-botconsole-1.production.e-bot7.de/",
       "https://main-botconsole-2.production.e-bot7.de/",
-      "https://main-botconsole.production.e-bot7.de/"
+      "https://main-botconsole.production.e-bot7.de/",
+      "https://k8s-main-botconsole.production.e-bot7.de/"
     ],
     "APP_CALLBACKS": [
       "https://console.e-bot7.de/callback",
       "https://main-botconsole-1.production.e-bot7.de/",
       "https://main-botconsole-2.production.e-bot7.de/callback",
-      "https://main-botconsole.production.e-bot7.de/callback"
+      "https://main-botconsole.production.e-bot7.de/callback",
+      "https://k8s-main-botconsole.production.e-bot7.de/callback"
     ]
   },
   "AUTH0_ALLOW_DELETE": false,
