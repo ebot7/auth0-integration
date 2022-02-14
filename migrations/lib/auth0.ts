@@ -22,6 +22,7 @@ export class Auth0 {
       },
       {
         connection_id: this.config.getBotEngineConnectionDB(),
+        assign_membership_on_login: true,
       }
     );
   }
