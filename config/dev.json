@@ -5,14 +5,12 @@
   "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
     "AUTH0_DOMAIN": "dev-zf0bz1nz.eu.auth0.com",
     "AUTH0_TENANT_NAME": "dev-zf0bz1nz",
-    "APP_ORIGINS": [
-      "http://localhost:4200/",
-      "https://dev.e-bot7.io/"
-    ],
+    "APP_ORIGINS": ["http://localhost:4200/", "https://dev.e-bot7.io/"],
     "APP_CALLBACKS": [
       "http://localhost:4200/callback",
       "https://dev.e-bot7.io/callback"
-    ]
+    ],
+    "ENCRYPTION_SERVICE_DOMAIN": "https://encryption-api"
   },
   "AUTH0_ALLOW_DELETE": false,
   "AUTH0_EXCLUDED_RULES": [""],

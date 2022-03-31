@@ -15,7 +15,8 @@
       "https://staging.e-bot7.de/callback",
       "https://main-botconsole-1.staging.e-bot7.de/callback",
       "https://main-botconsole-2.staging.e-bot7.de/callback"
-    ]
+    ],
+    "ENCRYPTION_SERVICE_DOMAIN": "https://encryption-api"
   },
   "AUTH0_ALLOW_DELETE": false,
   "AUTH0_EXCLUDED_RULES": [""],
