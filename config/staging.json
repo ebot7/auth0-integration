@@ -14,7 +14,10 @@
     "APP_CALLBACKS": [
       "https://staging.e-bot7.de/callback",
       "https://main-botconsole-1.staging.e-bot7.de/callback",
-      "https://main-botconsole-2.staging.e-bot7.de/callback"
+      "https://main-botconsole-2.staging.e-bot7.de/callback",
+      "https://staging.e-bot7.de/login-beta/callback",
+      "https://main-botconsole-1.staging.e-bot7.de/login-beta/callback",
+      "https://main-botconsole-2.staging.e-bot7.de/login-beta/callback"
     ],
     "ENCRYPTION_SERVICE_DOMAIN": "https://encryption-api"
   },
