@@ -9,8 +9,8 @@
     "export:staging": "a0deploy export --output_folder . --format yaml --config_file ./config/staging.json",
     "export:production": "a0deploy export --output_folder . --format yaml --config_file ./config/production.json",
     "migrate:org": "ts-node migrations/migrateOrg.ts",
-    "export:dev": "a0deploy export --output_folder test --format yaml --config_file ./config/dev.json",
-    "import:dev": "a0deploy export --output_folder test --format yaml --config_file ./config/dev.json"
+    "export:dev": "a0deploy export --output_folder dev --format yaml --config_file ./config/dev.json",
+    "import:dev": "a0deploy export --output_folder dev --format yaml --config_file ./config/dev.json"
   },
   "repository": {
     "type": "git",
