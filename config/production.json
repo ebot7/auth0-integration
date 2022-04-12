@@ -15,10 +15,15 @@
     ],
     "APP_CALLBACKS": [
       "https://console.e-bot7.de/callback",
-      "https://main-botconsole-1.production.e-bot7.de/",
+      "https://main-botconsole-1.production.e-bot7.de/callback",
       "https://main-botconsole-2.production.e-bot7.de/callback",
       "https://main-botconsole.production.e-bot7.de/callback",
-      "https://k8s-main-botconsole.production.e-bot7.de/callback"
+      "https://k8s-main-botconsole.production.e-bot7.de/callback",
+      "https://console.e-bot7.de/login-beta/callback",
+      "https://main-botconsole-1.production.e-bot7.de/login-beta/callback",
+      "https://main-botconsole-2.production.e-bot7.de/login-beta/callback",
+      "https://main-botconsole.production.e-bot7.de/login-beta/callback",
+      "https://k8s-main-botconsole.production.e-bot7.de/login-beta/callback"
     ],
     "ENCRYPTION_SERVICE_DOMAIN": "https://encryption-api"
   },
