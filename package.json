@@ -8,7 +8,9 @@
     "import:production": "a0deploy import --input_file tenant.yaml --config_file ./config/production.json",
     "export:staging": "a0deploy export --output_folder . --format yaml --config_file ./config/staging.json",
     "export:production": "a0deploy export --output_folder . --format yaml --config_file ./config/production.json",
-    "migrate:org": "ts-node migrations/migrateOrg.ts"
+    "migrate:org": "ts-node migrations/migrateOrg.ts",
+    "export:dev": "a0deploy export --output_folder test --format yaml --config_file ./config/dev.json",
+    "import:dev": "a0deploy export --output_folder test --format yaml --config_file ./config/dev.json"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
   "dependencies": {
     "@types/auth0": "^2.34.8",
     "auth0": "^2.37.0",
-    "auth0-deploy-cli": "^7.3.2",
+    "auth0-deploy-cli": "^7.7.1",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "slugify": "^1.6.3",
