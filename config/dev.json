@@ -2,7 +2,7 @@
   "AUTH0_DOMAIN": "dev-zf0bz1nz.eu.auth0.com",
   "AUTH0_CLIENT_ID": "zeYz9q1KPhulqs0ra6AMphI8SdnP5PYj",
   "AUTH0_CLIENT_SECRET": "...",
-  "AUTH0_EXCLUDED": ["organizations"],
+  "AUTH0_EXCLUDED": ["organizations", "connections"],
   "AUTH0_KEYWORD_REPLACE_MAPPINGS": {
     "AUTH0_DOMAIN": "dev-zf0bz1nz.eu.auth0.com",
     "AUTH0_TENANT_NAME": "dev-zf0bz1nz",
