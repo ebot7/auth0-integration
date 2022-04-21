@@ -58,7 +58,7 @@ async function setRolesToUser(user, context, callback) {
     }
 
     const globalRolesMap = {
-    	"SSO_Console_Admin": configuration.superAdminRole,
+    	"SSO_Console_Superadmin": configuration.superAdminRole,
       "SSO_Console_Developer": configuration.developerRole
     };
     const eb7EmployeeRole = configuration.employeeRole;
