@@ -362,22 +362,50 @@ guardianPhoneFactorSelectedProvider:
 guardianPhoneFactorMessageTypes:
   message_types: []
 roles:
-  - name: Admin
-    description: all operations allowed
-    permissions: []
-  - name: Agent
-    description: Answer visitor messages.
+  - name: Ebot7 Developer
+    description: >-
+      Can manage advanced technical features of bots, Can use advanced technical
+      features of API
     permissions:
-      - permission_name: read:messages
+      - permission_name: read:experimental-features
         resource_server_identifier: https://example.com/botengine
-      - permission_name: write:messages
+      - permission_name: read:styles
         resource_server_identifier: https://example.com/botengine
-  - name: Application Developer
-    description: can able to create application
-    permissions: []
-  - name: Editor
-    description: can able to edit
-    permissions: []
+      - permission_name: review:applications
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: write:experimental-features
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: write:styles
+        resource_server_identifier: https://example.com/botengine
+  - name: Ebot7 Employee
+    description: Can view a small number of settings in console specific to ebot7 employee
+    permissions:
+      - permission_name: read:settings-for-ebot7-employees
+        resource_server_identifier: https://example.com/botengine
+  - name: Organisation Manager
+    description: 'Manage an individual organisation, its bots and other settings '
+    permissions:
+      - permission_name: read:feature-toggles
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: read:users
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: write:org-feature-toggles
+        resource_server_identifier: https://example.com/botengine
+  - name: Super Admin
+    description: >-
+      Can view, create, and delete all organisations. Can edit basic settings
+      for any organisation 
+    permissions:
+      - permission_name: manage:orgs
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: read:feature-toggles
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: read:orgs
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: read:users
+        resource_server_identifier: https://example.com/botengine
+      - permission_name: write:feature-toggles
+        resource_server_identifier: https://example.com/botengine
 branding:
   colors:
     page_background: '#000000'
