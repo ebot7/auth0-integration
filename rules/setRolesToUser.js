@@ -51,15 +51,39 @@ async function setRolesToUser(user, context, callback) {
       throw new Error("ORG_NOT_EXIST");
     }
 
-    if (!orgInfo.idpConfig || !orgInfo.idpConfig.roleMapping) {
+    if (!orgInfo.idpConfig || !orgInfo.idpConfig.roleMapping || !user.global_roles) {
       console.log(`${orgId} org does not have idp role mapping info`);
       callback(null, user, context);
       return;
     }
 
+    const globalRolesMap = {
+    	"SSO_Console_Admin": configuration.superAdminRole,
+      "SSO_Console_Developer": configuration.developerRole
+    };
+    const eb7EmployeeRole = configuration.employeeRole;
+    
     const roleMapInfo = orgInfo.idpConfig.roleMapping;
     const roleField = orgInfo.idpConfig.roleField || "role";
-    const roles = roleMapInfo[user[roleField]];
+    let roles = roleMapInfo[user[roleField]] || [];
+    
+    if (roles) {
+      roles = roles.filter(function(role) {
+        return !Object.values(globalRolesMap).includes(role);
+      });
+    }
+    
+    if (new RegExp('e-bot7\.com').test(user.email)) {
+        roles.push(eb7EmployeeRole);
+  	}
+    
+    if (Array.isArray(user.global_roles)) { 
+    	user.global_roles.forEach(function(global_role) {
+      	if (globalRolesMap[global_role]) { 
+          roles.push(globalRolesMap[global_role]);
+        }
+      });
+    }
 
     if (!roles) {
       throw new Error("ROLE_NOT_EXIST");
