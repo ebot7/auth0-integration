@@ -16,13 +16,31 @@ resourceServers:
     identifier: https://example.com/botengine
     allow_offline_access: false
     enforce_policies: true
-    scopes:
-      - value: read:messages
-        description: Read messages
-      - value: write:messages
-        description: Write messages
-      - value: write:conversation
-        description: Write conversations
+    scopes:      
+      - value: read:styles
+        description: Read advanced styling settings of bots
+      - value: write:styles
+        description: Change, remove advanced styling settings of bots
+      - value: review:applications
+        description: Can review applications defined in an org
+      - value: read:experimental-features
+        description: Can read various settings related to experimental feature
+      - value: write:experimental-features
+        description: Can change various settings related to experimental feature
+      - value: read:orgs
+        description: Read all orgs
+      - value: manage:orgs
+        description: Can create, delete and assign an organisation manager to an org
+      - value: read:feature-toggles
+        description: Can read feature toggles
+      - value: write:org-feature-toggles
+        description: Can change feature toggles for a particular org
+      - value: write:feature-toggles
+        description: Can change any of the feature toggles
+      - value: read:users
+        description: Can read users
+      - value: read:settings-for-ebot7-employees
+        description: Can only read settings meant only for ebot7's employees
     signing_alg: RS256
     skip_consent_for_verifiable_first_party_clients: true
     token_dialect: access_token_authz
