@@ -158,7 +158,7 @@ async function setRolesToUser(user, context, callback) {
     }
 
     // To be removed after migration of users from BE to Okta
-    if (new RegExp("e-bot7.com$").test(user.email)) {
+    if (new RegExp("@e-bot7.com$").test(user.email)) {
       desiredRoleIds.push(configuration.EMPLOYEE_ROLE_ID);
     }
 
