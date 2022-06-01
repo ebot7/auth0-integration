@@ -8,6 +8,7 @@ function login(email, password, callback) {
 
   axios
     .post(`${configuration.AUTH_ENDPOINT}/authentication`, {
+      origin: 'login-ui',
       strategy: "local",
       email,
       password,
