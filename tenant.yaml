@@ -463,5 +463,3 @@ branding:
 prompts:
   universal_login_experience: new
   identifier_first: false
-migrations:
-  issue_opaque_access_tokens: true
