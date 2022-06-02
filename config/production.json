@@ -12,13 +12,15 @@
       "https://main-botconsole-1.production.e-bot7.de/",
       "https://main-botconsole-2.production.e-bot7.de/",
       "https://main-botconsole.production.e-bot7.de/",
-      "https://k8s-main-botconsole.production.e-bot7.de/"
+      "https://k8s-main-botconsole.production.e-bot7.de/",
+      "https://root-frame.staging.e-bot7.de/"
     ],
     "APP_CALLBACKS": [
       "https://console.e-bot7.de/callback",
       "https://main-botconsole.production.e-bot7.de/callback",
       "https://console.e-bot7.de/login-beta/callback",
-      "https://main-botconsole.production.e-bot7.de/login-beta/callback"
+      "https://main-botconsole.production.e-bot7.de/login-beta/callback",
+      "https://root-frame.staging.e-bot7.de/login/callback"
     ],
     "ENCRYPTION_SERVICE_DOMAIN": "https://encryption-api"
   },
