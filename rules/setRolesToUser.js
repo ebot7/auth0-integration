@@ -55,7 +55,7 @@ async function setRolesToUser(user, context, callback) {
         { roles: toRemove }
       );
       console.log(
-        `Roles removed for user ${user.user_id} for org ${orgId}: ${toAdd}`
+        `Roles removed for user ${user.user_id} for org ${orgId}: ${toRemove}`
       );
     }
 
