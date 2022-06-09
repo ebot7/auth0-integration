@@ -31,10 +31,11 @@ async function setRolesToUser(user, context, callback) {
     await ensureAuth0OrgManager();
     const { organizations } = global.auth0OrgManager;
 
-    const currentRoles = await organizations.getMemberRoles({
-      id: orgId,
-      user_id: user.user_id,
-    });
+    const currentRoles =
+      (await organizations.getMemberRoles({
+        id: orgId,
+        user_id: user.user_id,
+      })) || [];
 
     const { toAdd, toRemove } = getRoleUpdates(user, idpConfig, currentRoles);
 
@@ -43,12 +44,18 @@ async function setRolesToUser(user, context, callback) {
         { id: orgId, user_id: user.user_id },
         { roles: toAdd }
       );
+      console.log(
+        `Roles added for user ${user.user_id} for org ${orgId}: ${toAdd}`
+      );
     }
 
     if (toRemove.length) {
       await organizations.removeMemberRoles(
         { id: orgId, user_id: user.user_id },
         { roles: toRemove }
+      );
+      console.log(
+        `Roles removed for user ${user.user_id} for org ${orgId}: ${toAdd}`
       );
     }
 
